@@ -17,6 +17,22 @@
 			font-family: Verdana;
 			font-size: 30px;}
 
+		.button {
+			border: none;
+			color: white;
+			padding: 15px 24px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: var(--fsize);
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button:focus{
+			outline: none;
+		}
+
 		div {text-align: center}
 
 	</style>
@@ -56,6 +72,37 @@
 	</svg>
 
 
+	<!--
+		Fifth svg for the scale for the local risk
+	-->
+	<svg height="50" width="200" style="position: fixed; left: 45%; top: 90%; transform: translate(-50%, 0%);">
+	    <defs>
+	      <linearGradient id="MyGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+	        <stop offset="5%" stop-color="#0F0" />
+	        <stop offset="50%" stop-color="#FF0" />
+	        <stop offset="95%" stop-color="#F00" />
+	      </linearGradient>
+	    </defs>
+
+	    <rect fill="url(#MyGradient)" x="0" y="0" width="200" height="50"/>
+	</svg>
+
+	<!-- Label text for the fifth svg -->
+
+	<div style="position: fixed; left: 36%; top:91%; font-family: Tahoma; font-size: 30px; color: #0F0">
+		1
+	</div>
+
+	<div style="position: fixed; left: 52.5%; top:91%; font-family: Tahoma; font-size: 30px; color: #F00">
+		10
+	</div>
+
+	<!-- Sixth svg for the right-side panel with mask and testing center info -->
+
+	<svg height="572.5" width="500" style="position: fixed; left: 60%; top: 6%; transform: translate(0%, 0%)">
+		<rect x="0" y="0" width="1000" height="1000" style="fill: rgba(0, 0, 255, 0.3);" />
+	</svg>	
+
 
 
 	<div id="country" style="position:fixed; left:15%; top:8%; transform: translate(-50%, 0%); font-family: Verdana; font-size: 35px; color: #000000">
@@ -67,13 +114,77 @@
 		{{ country_cases | safe}}
 	</div>
 
+	<div style="font-size: 15px; position: fixed; left: 5.5%; top: 30%; font-family: Verdana">
+		<a href="https://www.worldometers.info/coronavirus/country/{{ country | safe }}" target="_blank">
+			[src]
+		</a>
+	</div>
 
+
+	<div style="position: fixed; left:67%; top:8%; font-family: Helvetica; font-size: 30px">
+		Find Masks Near You
+	</div>
+
+	<a href="https://www.target.com/s?searchTerm=masks" target="_blank">
+		<input type="button" class="button" style="background-color: #dd3e3e; position: fixed; left: 67%; top: 17%; transform: translate(-50%, 0%)" value="Target">
+	</a>
+
+	<a href="https://www.target.com/p/icu-non-medical-face-mask-20ct/-/A-79991725" target="_blank">
+		<input type="button" class="button" style="background-color: #dd3e3e; position: fixed; left: 76%; top: 17%; transform: translate(-50%, 0%)" value="20 for $16">
+	</a>
+
+	<a href="https://www.target.com/p/2pk-adult-fabric-face-mask/-/A-79934801?preselect=79912111#lnk=sametab" target="_blank">
+		<input type="button" class="button" style="background-color: #dd3e3e; position: fixed; left: 85%; top: 17%; transform: translate(-50%, 0%)" value="2 for $4">
+	</a>
+
+
+	<a href="https://www.walmart.com/browse/health/face-coverings-masks/976760_3386211" target="_blank">
+		<input type="button" class="button" style="background-color: #5555de; position: fixed; left: 67%; top: 27%; transform: translate(-50%, 0%)" value="Walmart">
+	</a>
+
+	<a href="https://www.walmart.com/ip/10-ct-Pack-Disposable-3-Ply-Face-Masks/459279944" target="_blank">
+		<input type="button" class="button" style="background-color: #5555de; position: fixed; left: 76%; top: 27%; transform: translate(-50%, 0%)" value="10 for $7">
+	</a>
+
+	<a href="https://www.walmart.com/ip/Basic-Equipment-3-Ply-Disposable-Face-Masks-25-ct/188634281" target="_blank">
+		<input type="button" class="button" style="background-color: #5555de; position: fixed; left: 85.5%; top: 27%; transform: translate(-50%, 0%)" value="25 for $15">
+	</a>
+
+
+
+	<a href="https://www.google.com/search?q=masks+near+me&oq=masks+near+me" target="_blank">
+		<input type="button" class="button" style="background-color: #55bb55; position: fixed; left: 77%; top: 37%; transform: translate(-50%, 0%)" value="Search for More">
+	</a>
+
+
+	<div style="position: fixed; left:65%; top:47%; font-family: Helvetica; font-size: 30px;">
+		COVID-19 Testing Centers<br>Near You
+	</div>
+
+	<a href="https://www.google.com/search?tbm=lcl&ei=nvg2X9_QNKLi9AO48ITwBw&q=covid+testing+sites&oq=covid+t&gs_l=psy-ab.3.0.0i433i67k1j0i433i273k1j0i67k1j0i433k1l3j0l3j0i433k1.1948.3925.0.4633.9.8.1.0.0.0.145.710.1j5.6.0....0...1.1.64.psy-ab..2.7.713...0i273k1j46i433i199i291k1j46i433i131k1j0i433i131k1.0.jhKvG2UAGSA" target="_blank">
+		<input type="button" class="button" style="background-color: #234567; position: fixed; left: 69%; top: 60%; transform: translate(-50%, 0%)" value="Find Testing Centers">
+	</a>
+
+	<a href="https://www.cvs.com/minuteclinic/covid-19-testing?icid=cvs-home-hero1-link1-coronavirus-testing" target="_blank">
+		<input type="button" class="button" style="background-color: #aa8888; position: fixed; left: 85%; top: 60%; transform: translate(-50%, 0%)" value="CVS Testing Centers">
+	</a>
+
+	<a href="https://www.mayoclinic.org/tests-procedures/covid-19-diagnostic-test/about/pac-20488900" target="_blank" style=" position: fixed; left:67%; top:72%; font-family: Helvetica;">
+		<input type="button" class="button" style="background-color: #9999ee; position: fixed; left: 77%; top: 70%; transform: translate(-50%, 0%)" value="Information from the Mayo Clinic">
+	</a>
 
 	<div id="local_region" style="position:fixed; left:45%; top:9%; transform: translate(-50%, 0%); font-family: Verdana; font-size: 25px; color: #000000">
 		{{ full_local_listing | safe }}
 	</div>
+
 	<div class="container" style="position:fixed; left: 45%; top: 20%; font-size: 20px; padding: 10px 15px; transform: translate(-50%, 0%);">
 		{{ local_cases_confirmed | safe}}
+	</div>
+
+	<div style="font-size: 15px; position: fixed; left: 36%; top: 30%; font-family: Verdana">
+		<a href="https://github.com/nytimes/covid-19-data" target="_blank">
+			[src]
+		</a>
 	</div>
 
 	<div style="position:fixed; left: 45%; top: 45%; transform: translate(-30%, 0%);">
@@ -101,7 +212,7 @@
 
 		<br><br>
 
-		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">
+		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">
 			WHO Updates
 		</a>
 
@@ -114,12 +225,10 @@
 		<br>
 
 		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports" target="_blank" style="font-size: 15px; padding-left: 2em">
-			
+
 		</a>
 
 		<br>
-
-
 	</div>
 
 </body>

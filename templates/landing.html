@@ -15,36 +15,65 @@
 			font-size: var(--fsize);
 			margin: 4px 2px;
 			cursor: pointer;
+			outline-style: solid;
+			outline-color: black;
+			outline-width: 2px;
+			
 		}
+
 		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    		color:    #008;
+    		color:    #888;
 		}
 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-		   color:    #008;
+		   color:    #888;
 		   opacity:  1;
 		}
 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-		   color:    #008;
+		   color:    #888;
 		   opacity:  1;
 		}
 		:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		   color:    #008;
+		   color:    #888;
 		}
 		::-ms-input-placeholder { /* Microsoft Edge */
-		   color:    #008;
+		   color:    #888;
 		}
 
 		::placeholder { /* Most modern browsers support this now. */
-		   color:    #008;
+		   color:    #888;
 		}
 	</style>
 </head>
 <body>
 	<form action="/main">
 		<input type="text" class="button" style="color: #000; position: fixed; left: 75%; top: 25%; background-color: rgba(255, 255, 255, 0); transform: translate(-50%, -50%); border-radius: 0%" placeholder="County" name="county" >
-		<input type="text" class="button" style="color: #000; position: fixed; left: 75%; top: 35%; background-color: rgba(255, 255, 255, 0); transform: translate(-50%, -50%); border-radius: 0%" placeholder="State" name="state" >
+
+		<div style=" color: #000; position: fixed; left: 74%; top: 31%; transform: translate(-50%, -50%); color: #000000; font-size: 10px; font-family: Verdana">
+			e.g. Alameda, Orange, Santa Clara...
+		</div>
+
+
+		<input type="text" class="button" style="color: #000; position: fixed; left: 75%; top: 40%; background-color: rgba(255, 255, 255, 0); transform: translate(-50%, -50%); border-radius: 0%" placeholder="State" name="state" >
 		<input type="submit" style="display: none" />
+
+		<div style=" color: #000; position: fixed; left: 74%; top: 46%; transform: translate(-50%, -50%); color: #000000; font-size: 10px; font-family: Verdana">
+			e.g. California, Nevada, Arkansas...
+		</div>
+
 	</form>
+
+	<div style="font-size: 50px; font-family: Tahoma; color: #8585ff">
+		Welcome to Local-CoV
+	</div>
+
+	<div style="font-size: 20px; font-family: Tahoma; color: #111111; position: fixed; top: 10%">
+		This website aims to get information and resources to those who might <br> 
+		not otherwise have access to it. Just enter your county and state, and <br>
+		you'll see information like the number of local cases, your state's <br>
+		outbreak risk factor, and some resources for getting things like masks <br>
+		and the locations of some local testing centers. 
+	</div>
+
 </body>
 </html>
 
