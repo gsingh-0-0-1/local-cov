@@ -23,8 +23,8 @@ def landing():
 @app.route('/main')
 def main():
 	#get county and state
-	county = request.args.get("county")
-	region = request.args.get("state")
+	county = request.args.get("county").capitalize()
+	region = request.args.get("state").capitalize()
 	country = "US"
 
 	#get country case data
