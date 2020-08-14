@@ -7,15 +7,10 @@ import time
 import os
 import numpy as np
 import codecs
-import ephem
 import datetime
-import pytz
-import pandas as pd
 import requests
-from ip2geotools.databases.noncommercial import DbIpCity
 from bs4 import BeautifulSoup
 import html2text
-import geocoder
 
 localdatatemplate = "date,county,state,fips,cases,deaths,confirmed_cases,confirmed_deaths,probable_cases,probable_deaths"
 
@@ -123,3 +118,4 @@ try:
 	app.run(host = sys.argv[1], debug = True, port = int(sys.argv[2])) 
 except IndexError:
     raise IndexError("Please enter the target IP as the first argument, and the target port as the second.")
+
