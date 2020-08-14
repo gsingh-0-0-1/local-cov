@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local-CoV</title>
+	<style type="text/css">
+
+		a:visited { text-decoration: none; color:blue; }
+
+		body {background-image: url("static/mainbackground.jpg"); background-repeat: no-repeat; background-position: 0px 0px; background-size:100%;}
+
+		.container {background-color: #aa3f3f; 
+			position: fixed; 
+			left: 50%; 
+			top: 20%; 
+			transform: translate(-50%, -0%);
+			padding: 15px 24px;
+			font-family: Verdana;
+			font-size: 30px;}
+
+		div {text-align: center}
+
+	</style>
+</head>
+<body>
+
+	<!--
+		First svg for the US stats
+	-->
+
+	<svg height="200" width="300" style="position: fixed; left: 15%; top: 6%; transform: translate(-50%, 0%)">
+		<rect x="0" y="0" width="1000" height="1000" style="fill: rgba(0, 0, 255, 0.3);" />
+	</svg>
+
+	<!--
+		Second svg for the local stats
+	-->
+
+	<svg height="200" width="300" style="position: fixed; left: 45%; top: 6%; transform: translate(-50%, 0%)">
+		<rect x="0" y="0" width="1000" height="1000" style="fill: rgba(0, 0, 255, 0.3);" />
+	</svg>
+
+	<!--
+		Third svg for the local risk
+	-->
+
+	<svg height="300" width="300" style="position: fixed; left: 45%; top: 45%; transform: translate(-50%, 0%)">
+		<rect x="0" y="0" width="1000" height="1000" style="fill: rgba(0, 0, 255, 0.3);" />
+	</svg>
+
+	<!--
+		Fourth svg for the CDC/WHO guideline panel
+	-->	
+
+	<svg height="300" width="300" style="position: fixed; left: 15%; top: 45%; transform: translate(-50%, 0%)">
+		<rect x="0" y="0" width="1000" height="1000" style="fill: rgba(0, 0, 255, 0.3);" />
+	</svg>
+
+
+
+
+	<div id="country" style="position:fixed; left:15%; top:8%; transform: translate(-50%, 0%); font-family: Verdana; font-size: 35px; color: #000000">
+		<a href="https://www.worldometers.info/coronavirus/country/{{ country | safe }}" target="_blank">
+			United States
+		</a>
+	</div>
+	<div class="container" style="position:fixed; left:15%; top: 17%; transform: translate(-50%, 0%);">
+		{{ country_cases | safe}}
+	</div>
+
+
+
+	<div id="local_region" style="position:fixed; left:45%; top:9%; transform: translate(-50%, 0%); font-family: Verdana; font-size: 25px; color: #000000">
+		{{ full_local_listing | safe }}
+	</div>
+	<div class="container" style="position:fixed; left: 45%; top: 20%; font-size: 20px; padding: 10px 15px; transform: translate(-50%, 0%);">
+		{{ local_cases_confirmed | safe}}
+	</div>
+
+	<div style="position:fixed; left: 45%; top: 45%; transform: translate(-30%, 0%);">
+		<svg height="500" width="500">
+			<circle cx="150" cy="150" r="100" stroke="rgb({{ state_spread_red }}, {{ state_spread_green }}, 0)" stroke-width="10" fill="none" />
+			<div style="position:fixed; top: 30%; left: 30%; transform: translate(-50%, -50%); font-size: 50px; color: rgb({{ state_spread_red }}, {{ state_spread_green }}, 0); font-family: Tahoma">
+				{{ state_spread_risk }}
+			</div>
+		</svg>
+	</div>
+
+
+	<div style="position: fixed; left: 6%; top: 47%; font-family: Verdana; font-size: 25px; text-align: left;">
+		CDC Guidelines
+		<br>
+		<a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/prevention.html" target="_blank" style="font-size: 15px; padding-left: 2em">
+			Protect Yourself and Others
+		</a>
+
+		<br>
+
+		<a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html" target="_blank" style="font-size: 15px; padding-left: 2em">
+			The Importance of Masks
+		</a>
+
+		<br><br>
+
+		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">
+			WHO Updates
+		</a>
+
+		<br>
+
+		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters" target="_blank" style="font-size: 15px; padding-left: 2em">
+			Myths and Misonceptions
+		</a>
+
+		<br>
+
+		<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports" target="_blank" style="font-size: 15px; padding-left: 2em">
+			
+		</a>
+
+		<br>
+
+
+	</div>
+
+</body>
+</html>

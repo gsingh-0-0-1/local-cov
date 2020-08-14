@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local-CoV</title>
+	<style>
+		body {background-image: url('static/background.jpg');}
+		.button {
+			background-color: var(--bcolor);
+			border: none;
+			color: white;
+			padding: 15px 24px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: var(--fsize);
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    		color:    #008;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #008;
+		   opacity:  1;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #008;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #008;
+		}
+		::-ms-input-placeholder { /* Microsoft Edge */
+		   color:    #008;
+		}
+
+		::placeholder { /* Most modern browsers support this now. */
+		   color:    #008;
+		}
+	</style>
+</head>
+<body>
+	<form action="/main">
+		<input type="text" class="button" style="color: #000; position: fixed; left: 75%; top: 25%; background-color: rgba(255, 255, 255, 0); transform: translate(-50%, -50%); border-radius: 0%" placeholder="County" name="county" >
+		<input type="text" class="button" style="color: #000; position: fixed; left: 75%; top: 35%; background-color: rgba(255, 255, 255, 0); transform: translate(-50%, -50%); border-radius: 0%" placeholder="State" name="state" >
+		<input type="submit" style="display: none" />
+	</form>
+</body>
+</html>
+
+
+
